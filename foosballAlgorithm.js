@@ -47,11 +47,11 @@ for (var key in allTeams) {
     countryNames.push(allTeams[key].country)
 }
 
-console.log(countryNames);
+console.log(`We have these teams joining Round One of Foosball: ${countryNames[0]}, ${countryNames[1]}, ${countryNames[2]}, ${countryNames[3]}, ${countryNames[4]}, ${countryNames[5]}, ${countryNames[6]}, ${countryNames[7]}`);
 
 var upgradeTeams1 = [];
 
-for (i = 0; i < 4 / 2; i++) {
+for (i = 0; i < 4; i++) {
     var team1 = countryNames[i * 2];
     var team2 = countryNames[i * 2 + 1];
     let t1Score = Math.floor((Math.random() * 10) + 1);
@@ -74,21 +74,20 @@ for (i = 0; i < 4 / 2; i++) {
     }
 }
 
-function assign(t1Score, t2Score){
+function assign(t1Score, t2Score) {
     if (t1Score > t2Score) {
-        teamWin = team1
-        teamLose = team2
-        scoreWin = t1Score
-        scoreLose = t2Score
+        teamWin = team1;
+        teamLose = team2;
+        scoreWin = t1Score;
+        scoreLose = t2Score;
     }
     else if (t1Score < t2Score) {
-        teamWin = team2
-        teamLose = team1
-        scoreWin = t2Score
-        scoreLose = t1Score
+        teamWin = team2;
+        teamLose = team1;
+        scoreWin = t2Score;
+        scoreLose = t1Score;
     }
 }
-
 
 function upgrade1 (teamWin) {
     upgradeTeams1.push(teamWin)
